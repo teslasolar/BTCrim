@@ -1,0 +1,117 @@
+---
+layout: base.njk
+title: About
+---
+
+<div class="max-w-3xl">
+  <h1 class="text-4xl font-bold mb-6">About Bethlehem Township Crime Map</h1>
+
+  <div class="space-y-6 text-crime-muted">
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Mission</h2>
+      <p>
+        The Bethlehem Township Crime Map provides transparent, accessible crime data to help residents
+        stay informed about public safety in their community. Our goal is to promote awareness,
+        encourage community engagement, and support data-driven public safety initiatives.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Data Sources</h2>
+      <p class="mb-3">Crime data is collected from publicly available sources including:</p>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li>Bethlehem Township Police Department public records</li>
+        <li>Pennsylvania State Police crime reporting system</li>
+        <li>Public safety bulletins and press releases</li>
+        <li>Freedom of Information Act (FOIA) requests</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Privacy & Anonymization</h2>
+      <p>
+        To protect privacy, specific addresses are generalized to the street block level.
+        No personally identifiable information about victims or suspects is displayed.
+        All data presented complies with applicable privacy laws and regulations.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Technical Implementation</h2>
+      <p class="mb-3">This project is built using the KONOMI Standard framework:</p>
+      <ul class="list-disc list-inside space-y-2 ml-4">
+        <li><strong>Static Site Generation:</strong> 11ty (Eleventy)</li>
+        <li><strong>Styling:</strong> Tailwind CSS</li>
+        <li><strong>Mapping:</strong> Leaflet.js with OpenStreetMap</li>
+        <li><strong>Interactivity:</strong> Alpine.js</li>
+        <li><strong>Data Format:</strong> KONOMI UDT (User Defined Types)</li>
+        <li><strong>Hosting:</strong> GitHub Pages</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Data Model (UDTs)</h2>
+      <div class="bg-crime-surface rounded-lg p-4 border border-crime-primary/30 font-mono text-sm">
+        <pre class="text-crime-text">
+<span class="text-crime-accent">CrimeIncident</span> {
+  id: string
+  type: <span class="text-crime-warning">CrimeType</span>
+  date: datetime
+  location: <span class="text-crime-warning">GeoLocation</span>
+  address: string
+  description: string
+  status: <span class="text-crime-warning">IncidentStatus</span>
+  severity: int (1-5)
+}
+
+<span class="text-crime-accent">GeoLocation</span> {
+  lat: float
+  lng: float
+}
+
+<span class="text-crime-accent">Hotspot</span> {
+  center: <span class="text-crime-warning">GeoLocation</span>
+  radius: float
+  incidentCount: int
+  intensity: string
+  timeframe: string
+}
+        </pre>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Updates</h2>
+      <p>
+        Crime data is updated regularly as new information becomes available from public sources.
+        The last update date is displayed in the sidebar. Data typically reflects incidents reported
+        within the past 90 days, with historical data available for trend analysis.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Disclaimer</h2>
+      <p class="text-sm">
+        This crime map is provided for informational purposes only. While we strive for accuracy,
+        data may be incomplete or contain errors. Crime data should not be used as the sole basis
+        for making decisions about personal safety or property transactions. For official crime
+        statistics and reports, please contact the Bethlehem Township Police Department directly.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-crime-text mb-3">Contact & Contribute</h2>
+      <p>
+        This is an open-source project. Contributions, suggestions, and data corrections are welcome.
+      </p>
+      <div class="mt-4 flex space-x-4">
+        <a href="https://github.com/yourusername/BTCrim" class="btn-primary">
+          View on GitHub
+        </a>
+        <a href="mailto:contact@example.com" class="btn-secondary">
+          Report an Issue
+        </a>
+      </div>
+    </section>
+  </div>
+</div>

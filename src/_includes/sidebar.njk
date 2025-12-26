@@ -1,0 +1,80 @@
+<div class="p-6">
+  <div class="mb-8">
+    <a href="/" class="block">
+      <h1 class="text-xl font-bold text-crime-accent mb-1">🚨 BT Crime Map</h1>
+      <p class="text-xs text-crime-muted">Bethlehem Township, PA</p>
+    </a>
+  </div>
+
+  <nav class="space-y-1 mb-8">
+    <div class="text-crime-muted text-xs uppercase tracking-wider mb-3 font-semibold">Navigation</div>
+    <a href="/" class="nav-item">
+      <span class="mr-2">🗺️</span> Crime Map
+    </a>
+    <a href="/dashboard" class="nav-item">
+      <span class="mr-2">📊</span> Dashboard
+    </a>
+    <a href="/analytics" class="nav-item">
+      <span class="mr-2">📈</span> Analytics
+    </a>
+    <a href="/hotspots" class="nav-item">
+      <span class="mr-2">🔥</span> Hotspots
+    </a>
+    <a href="/timeline" class="nav-item">
+      <span class="mr-2">⏱️</span> Timeline
+    </a>
+  </nav>
+
+  <div class="mb-8">
+    <div class="text-crime-muted text-xs uppercase tracking-wider mb-3 font-semibold">Crime Types</div>
+    <div class="space-y-2">
+      <a href="/types/theft" class="nav-item flex items-center justify-between">
+        <span>Theft</span>
+        <span class="crime-badge crime-theft text-xs">THEFT</span>
+      </a>
+      <a href="/types/burglary" class="nav-item flex items-center justify-between">
+        <span>Burglary</span>
+        <span class="crime-badge crime-burglary text-xs">BURG</span>
+      </a>
+      <a href="/types/assault" class="nav-item flex items-center justify-between">
+        <span>Assault</span>
+        <span class="crime-badge crime-assault text-xs">ASLT</span>
+      </a>
+      <a href="/types/vandalism" class="nav-item flex items-center justify-between">
+        <span>Vandalism</span>
+        <span class="crime-badge crime-vandalism text-xs">VAND</span>
+      </a>
+      <a href="/types/drug" class="nav-item flex items-center justify-between">
+        <span>Drug Offense</span>
+        <span class="crime-badge crime-drug text-xs">DRUG</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="mb-8">
+    <div class="text-crime-muted text-xs uppercase tracking-wider mb-3 font-semibold">Resources</div>
+    <a href="/data-sources" class="nav-item">
+      <span class="mr-2">📚</span> Data Sources
+    </a>
+    <a href="/api" class="nav-item">
+      <span class="mr-2">🔌</span> API Docs
+    </a>
+    <a href="/about" class="nav-item">
+      <span class="mr-2">ℹ️</span> About
+    </a>
+  </div>
+
+  <div class="pt-6 border-t border-crime-primary/30">
+    <button @click="dark=!dark" class="w-full text-crime-muted hover:text-crime-text text-sm py-2 px-3 rounded-md hover:bg-crime-primary/20 transition-colors">
+      <span x-show="dark">☀️ Light Mode</span>
+      <span x-show="!dark">🌙 Dark Mode</span>
+    </button>
+  </div>
+
+  <div class="mt-4 pt-4 border-t border-crime-primary/30">
+    <div class="text-xs text-crime-muted">
+      <div class="mb-2">Last Updated:</div>
+      <div class="font-mono text-crime-text">{{ crime_standard.meta.lastUpdated }}</div>
+    </div>
+  </div>
+</div>

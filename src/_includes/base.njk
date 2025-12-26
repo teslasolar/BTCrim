@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{dark:true}" :class="{'dark':dark}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>{{title}} | Bethlehem Township Crime Map</title>
+  <meta name="description" content="Interactive crime mapping and analysis for Bethlehem Township, PA">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/libs/leaflet/leaflet.css">
+  <script defer src="https://unpkg.com/alpinejs@3/dist/cdn.min.js"></script>
+  <script src="/libs/leaflet/leaflet.js"></script>
+</head>
+<body class="bg-crime-bg text-crime-text min-h-screen">
+  <div class="flex min-h-screen">
+    <!--SIDEBAR-->
+    <aside class="w-64 h-screen sticky top-0 overflow-y-auto border-r border-crime-primary/30 bg-crime-surface/50 backdrop-blur-sm">
+      {% include "sidebar.njk" %}
+    </aside>
+
+    <!--MAIN-->
+    <main class="flex-1 p-6 md:p-8 max-w-7xl">
+      {{content|safe}}
+    </main>
+  </div>
+
+  <script src="/assets/js/map.js"></script>
+  <script src="/assets/js/stats.js"></script>
+  <script src="/assets/js/search.js"></script>
+</body>
+</html>

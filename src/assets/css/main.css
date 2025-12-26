@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Crime Map Cards */
+  .crime-card {
+    @apply bg-crime-surface rounded-lg p-4 border border-crime-primary/30 hover:border-crime-accent/50 transition-all duration-200 shadow-lg;
+  }
+
+  .crime-card-header {
+    @apply flex justify-between items-start mb-3 pb-2 border-b border-crime-primary/20;
+  }
+
+  /* Crime Type Badges */
+  .crime-badge {
+    @apply px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .crime-theft { @apply bg-yellow-600/20 text-yellow-400 border border-yellow-600/30; }
+  .crime-assault { @apply bg-red-600/20 text-red-400 border border-red-600/30; }
+  .crime-burglary { @apply bg-red-700/20 text-red-300 border border-red-700/30; }
+  .crime-vandalism { @apply bg-orange-600/20 text-orange-400 border border-orange-600/30; }
+  .crime-drug { @apply bg-purple-600/20 text-purple-400 border border-purple-600/30; }
+  .crime-other { @apply bg-gray-600/20 text-gray-400 border border-gray-600/30; }
+
+  /* Stats */
+  .stat-card {
+    @apply bg-crime-surface rounded-lg p-6 border border-crime-primary/30;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-crime-text;
+  }
+
+  .stat-label {
+    @apply text-sm text-crime-muted uppercase tracking-wider;
+  }
+
+  .stat-trend-up {
+    @apply text-crime-danger text-sm font-semibold;
+  }
+
+  .stat-trend-down {
+    @apply text-crime-success text-sm font-semibold;
+  }
+
+  /* Navigation */
+  .nav-item {
+    @apply block py-2 px-3 rounded-md hover:bg-crime-primary/30 text-crime-muted hover:text-crime-text transition-colors;
+  }
+
+  .nav-active {
+    @apply bg-crime-primary/50 text-crime-text font-semibold;
+  }
+
+  /* Map Container */
+  .map-container {
+    @apply w-full h-96 md:h-[600px] rounded-lg overflow-hidden shadow-2xl border border-crime-primary/30;
+  }
+
+  /* Search */
+  .search-input {
+    @apply w-full bg-crime-surface border border-crime-primary/50 rounded-lg px-4 py-2 text-crime-text focus:border-crime-accent focus:ring-2 focus:ring-crime-accent/20 outline-none transition-all;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply bg-crime-accent hover:bg-crime-accent/80 text-white font-semibold px-4 py-2 rounded-lg transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-crime-primary hover:bg-crime-primary/80 text-crime-text font-semibold px-4 py-2 rounded-lg transition-colors;
+  }
+
+  /* Tables */
+  .data-table {
+    @apply w-full border-collapse;
+  }
+
+  .data-table th {
+    @apply text-left py-3 px-4 text-crime-muted uppercase text-xs tracking-wider border-b border-crime-primary/30;
+  }
+
+  .data-table td {
+    @apply py-3 px-4 border-b border-crime-primary/10 text-crime-text;
+  }
+
+  .data-table tr:hover {
+    @apply bg-crime-primary/10;
+  }
+
+  /* Filters */
+  .filter-group {
+    @apply mb-4;
+  }
+
+  .filter-label {
+    @apply block text-sm font-semibold text-crime-text mb-2;
+  }
+
+  .filter-select {
+    @apply w-full bg-crime-surface border border-crime-primary/50 rounded-lg px-3 py-2 text-crime-text focus:border-crime-accent outline-none;
+  }
+
+  /* Heat map legend */
+  .heat-legend {
+    @apply bg-crime-surface/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-crime-primary/30;
+  }
+
+  .heat-gradient {
+    @apply h-4 rounded-full;
+    background: linear-gradient(to right, #10b981, #f59e0b, #ef4444);
+  }
+
+  /* Timeline */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-crime-primary/30;
+  }
+
+  .timeline-item::before {
+    @apply absolute left-0 top-0 w-4 h-4 rounded-full bg-crime-accent border-4 border-crime-bg;
+    content: '';
+    transform: translateX(-50%);
+  }
+
+  .timeline-date {
+    @apply text-crime-muted text-sm font-mono mb-2;
+  }
+
+  /* Hotspot indicator */
+  .hotspot-high {
+    @apply bg-red-600/30 border-2 border-red-600 rounded-lg;
+  }
+
+  .hotspot-medium {
+    @apply bg-yellow-600/30 border-2 border-yellow-600 rounded-lg;
+  }
+
+  .hotspot-low {
+    @apply bg-green-600/30 border-2 border-green-600 rounded-lg;
+  }
+}
+
+/* Leaflet custom styles */
+.leaflet-popup-content-wrapper {
+  @apply bg-crime-surface text-crime-text rounded-lg;
+}
+
+.leaflet-popup-tip {
+  @apply bg-crime-surface;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-crime-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-crime-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-crime-accent;
+}

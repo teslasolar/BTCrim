@@ -1,0 +1,197 @@
+[
+  {
+    "id": "2025-001",
+    "type": "THEFT",
+    "date": "2025-12-25T14:30:00",
+    "location": {
+      "lat": 40.6520,
+      "lng": -75.3700
+    },
+    "address": "100 Block Main Street",
+    "description": "Vehicle break-in reported, window smashed",
+    "status": "INVESTIGATING",
+    "severity": 3
+  },
+  {
+    "id": "2025-002",
+    "type": "VANDALISM",
+    "date": "2025-12-24T22:15:00",
+    "location": {
+      "lat": 40.6485,
+      "lng": -75.3665
+    },
+    "address": "200 Block Park Avenue",
+    "description": "Graffiti on public property",
+    "status": "REPORTED",
+    "severity": 2
+  },
+  {
+    "id": "2025-003",
+    "type": "BURGLARY",
+    "date": "2025-12-23T03:45:00",
+    "location": {
+      "lat": 40.6540,
+      "lng": -75.3720
+    },
+    "address": "300 Block Oak Street",
+    "description": "Residential break-in, rear door forced",
+    "status": "CLOSED",
+    "severity": 4
+  },
+  {
+    "id": "2025-004",
+    "type": "ASSAULT",
+    "date": "2025-12-22T19:20:00",
+    "location": {
+      "lat": 40.6470,
+      "lng": -75.3650
+    },
+    "address": "400 Block Market Street",
+    "description": "Physical altercation between two individuals",
+    "status": "INVESTIGATING",
+    "severity": 5
+  },
+  {
+    "id": "2025-005",
+    "type": "DRUG_OFFENSE",
+    "date": "2025-12-21T16:00:00",
+    "location": {
+      "lat": 40.6510,
+      "lng": -75.3680
+    },
+    "address": "500 Block Church Road",
+    "description": "Drug possession arrest",
+    "status": "CLOSED",
+    "severity": 3
+  },
+  {
+    "id": "2025-006",
+    "type": "THEFT",
+    "date": "2025-12-20T11:30:00",
+    "location": {
+      "lat": 40.6495,
+      "lng": -75.3695
+    },
+    "address": "600 Block Broad Street",
+    "description": "Shoplifting incident",
+    "status": "CLOSED",
+    "severity": 2
+  },
+  {
+    "id": "2025-007",
+    "type": "VEHICLE_THEFT",
+    "date": "2025-12-19T08:00:00",
+    "location": {
+      "lat": 40.6530,
+      "lng": -75.3710
+    },
+    "address": "700 Block Elm Avenue",
+    "description": "Vehicle reported stolen from driveway",
+    "status": "INVESTIGATING",
+    "severity": 5
+  },
+  {
+    "id": "2025-008",
+    "type": "VANDALISM",
+    "date": "2025-12-18T23:45:00",
+    "location": {
+      "lat": 40.6465,
+      "lng": -75.3640
+    },
+    "address": "800 Block Pine Street",
+    "description": "Vehicle tires slashed",
+    "status": "REPORTED",
+    "severity": 3
+  },
+  {
+    "id": "2025-009",
+    "type": "FRAUD",
+    "date": "2025-12-17T10:15:00",
+    "location": {
+      "lat": 40.6505,
+      "lng": -75.3675
+    },
+    "address": "900 Block Maple Drive",
+    "description": "Credit card fraud reported",
+    "status": "INVESTIGATING",
+    "severity": 3
+  },
+  {
+    "id": "2025-010",
+    "type": "BURGLARY",
+    "date": "2025-12-16T02:30:00",
+    "location": {
+      "lat": 40.6525,
+      "lng": -75.3690
+    },
+    "address": "1000 Block Cedar Lane",
+    "description": "Commercial building break-in",
+    "status": "CLOSED",
+    "severity": 4
+  },
+  {
+    "id": "2025-011",
+    "type": "DUI",
+    "date": "2025-12-15T01:20:00",
+    "location": {
+      "lat": 40.6480,
+      "lng": -75.3660
+    },
+    "address": "Intersection of Main & Park",
+    "description": "DUI traffic stop and arrest",
+    "status": "CLOSED",
+    "severity": 3
+  },
+  {
+    "id": "2025-012",
+    "type": "THEFT",
+    "date": "2025-12-14T15:45:00",
+    "location": {
+      "lat": 40.6515,
+      "lng": -75.3705
+    },
+    "address": "1200 Block Walnut Street",
+    "description": "Package theft from porch",
+    "status": "INVESTIGATING",
+    "severity": 2
+  },
+  {
+    "id": "2025-013",
+    "type": "ASSAULT",
+    "date": "2025-12-13T20:10:00",
+    "location": {
+      "lat": 40.6490,
+      "lng": -75.3670
+    },
+    "address": "1300 Block Birch Avenue",
+    "description": "Domestic disturbance",
+    "status": "CLOSED",
+    "severity": 4
+  },
+  {
+    "id": "2025-014",
+    "type": "VANDALISM",
+    "date": "2025-12-12T18:30:00",
+    "location": {
+      "lat": 40.6535,
+      "lng": -75.3715
+    },
+    "address": "1400 Block Spruce Road",
+    "description": "Mailbox destroyed",
+    "status": "REPORTED",
+    "severity": 2
+  },
+  {
+    "id": "2025-015",
+    "type": "THEFT",
+    "date": "2025-12-11T12:00:00",
+    "location": {
+      "lat": 40.6475,
+      "lng": -75.3655
+    },
+    "address": "1500 Block Willow Drive",
+    "description": "Bicycle stolen",
+    "status": "REPORTED",
+    "severity": 2
+  }
+]

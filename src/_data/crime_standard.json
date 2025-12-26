@@ -1,0 +1,181 @@
+{
+  "meta": {
+    "name": "Bethlehem Township Crime Data Standard",
+    "version": "1.0.0",
+    "description": "Structured crime data format for public safety analysis",
+    "jurisdiction": "Bethlehem Township, PA",
+    "lastUpdated": "2025-12-26"
+  },
+  "udts": {
+    "CrimeIncident": {
+      "name": "CrimeIncident",
+      "description": "Base crime incident record",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "Unique incident identifier"
+        },
+        {
+          "name": "type",
+          "type": "CrimeType",
+          "required": true,
+          "description": "Classification of crime"
+        },
+        {
+          "name": "date",
+          "type": "datetime",
+          "required": true,
+          "description": "Date and time of incident"
+        },
+        {
+          "name": "location",
+          "type": "GeoLocation",
+          "required": true,
+          "description": "Geographic coordinates"
+        },
+        {
+          "name": "address",
+          "type": "string",
+          "required": false,
+          "description": "Street address (may be anonymized)"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "required": false,
+          "description": "Incident description"
+        },
+        {
+          "name": "status",
+          "type": "IncidentStatus",
+          "required": true,
+          "description": "Current status"
+        },
+        {
+          "name": "severity",
+          "type": "int",
+          "required": true,
+          "description": "Severity level 1-5"
+        }
+      ]
+    },
+    "GeoLocation": {
+      "name": "GeoLocation",
+      "description": "Geographic coordinate pair",
+      "fields": [
+        {
+          "name": "lat",
+          "type": "float",
+          "required": true,
+          "description": "Latitude"
+        },
+        {
+          "name": "lng",
+          "type": "float",
+          "required": true,
+          "description": "Longitude"
+        }
+      ]
+    },
+    "CrimeType": {
+      "name": "CrimeType",
+      "description": "Crime classification enumeration",
+      "values": [
+        "THEFT",
+        "BURGLARY",
+        "ASSAULT",
+        "VANDALISM",
+        "DRUG_OFFENSE",
+        "VEHICLE_THEFT",
+        "FRAUD",
+        "DUI",
+        "DOMESTIC",
+        "OTHER"
+      ]
+    },
+    "IncidentStatus": {
+      "name": "IncidentStatus",
+      "description": "Investigation status",
+      "values": [
+        "REPORTED",
+        "INVESTIGATING",
+        "CLOSED",
+        "UNFOUNDED"
+      ]
+    },
+    "Hotspot": {
+      "name": "Hotspot",
+      "description": "Crime hotspot area",
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "required": true,
+          "description": "Hotspot identifier"
+        },
+        {
+          "name": "center",
+          "type": "GeoLocation",
+          "required": true,
+          "description": "Center point"
+        },
+        {
+          "name": "radius",
+          "type": "float",
+          "required": true,
+          "description": "Radius in meters"
+        },
+        {
+          "name": "incidentCount",
+          "type": "int",
+          "required": true,
+          "description": "Number of incidents"
+        },
+        {
+          "name": "intensity",
+          "type": "string",
+          "required": true,
+          "description": "HIGH, MEDIUM, LOW"
+        },
+        {
+          "name": "timeframe",
+          "type": "string",
+          "required": true,
+          "description": "Time period analyzed"
+        }
+      ]
+    },
+    "CrimeStats": {
+      "name": "CrimeStats",
+      "description": "Aggregated crime statistics",
+      "fields": [
+        {
+          "name": "period",
+          "type": "string",
+          "required": true,
+          "description": "Time period (e.g., '2025-12')"
+        },
+        {
+          "name": "totalIncidents",
+          "type": "int",
+          "required": true,
+          "description": "Total crime count"
+        },
+        {
+          "name": "byType",
+          "type": "map<CrimeType, int>",
+          "required": true,
+          "description": "Breakdown by crime type"
+        },
+        {
+          "name": "trend",
+          "type": "float",
+          "required": false,
+          "description": "Percentage change from previous period"
+        }
+      ]
+    }
+  }
+}

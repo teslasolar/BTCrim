@@ -1,0 +1,28 @@
+{
+  "name": "bethlehem-township-crime-map",
+  "version": "1.0.0",
+  "description": "Bethlehem Township PA Crime Map - KONOMI Standard Implementation",
+  "scripts": {
+    "dev": "npm run css && eleventy --serve",
+    "build": "npm run css && eleventy",
+    "css": "tailwindcss -i src/assets/css/main.css -o dist/css/main.css --minify",
+    "fetch-data": "node scripts/fetch-real-crime-data.js",
+    "update-data": "npm run fetch-data && npm run build"
+  },
+  "keywords": ["crime-map", "bethlehem-township", "konomi", "data-visualization"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "tailwindcss": "^3.4.0",
+    "lunr": "^2.3.9",
+    "alpinejs": "^3.13.0"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parse": "^5.5.0",
+    "node-fetch": "^3.3.2"
+  }
+}

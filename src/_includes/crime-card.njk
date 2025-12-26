@@ -1,0 +1,47 @@
+<div class="crime-card" data-incident-id="{{crime.id}}">
+  <div class="crime-card-header">
+    <div>
+      <h3 class="text-lg font-bold text-crime-text mb-1">{{crime.type}}</h3>
+      <p class="text-sm text-crime-muted font-mono">{{crime.date|formatDate}}</p>
+    </div>
+    <div>
+      {% crimeType crime.type %}
+    </div>
+  </div>
+
+  <div class="space-y-2">
+    {% if crime.address %}
+    <div class="flex items-start">
+      <span class="text-crime-muted mr-2">📍</span>
+      <span class="text-sm text-crime-text">{{crime.address}}</span>
+    </div>
+    {% endif %}
+
+    {% if crime.description %}
+    <div class="flex items-start">
+      <span class="text-crime-muted mr-2">📝</span>
+      <span class="text-sm text-crime-text">{{crime.description}}</span>
+    </div>
+    {% endif %}
+
+    <div class="flex items-center justify-between pt-3 border-t border-crime-primary/20">
+      <div class="flex items-center space-x-3">
+        <span class="text-xs text-crime-muted">
+          Status: <span class="text-crime-text font-semibold">{{crime.status}}</span>
+        </span>
+        <span class="text-xs text-crime-muted">
+          Severity:
+          <span class="text-crime-warning font-semibold">
+            {% for i in range(0, crime.severity) %}⚠️{% endfor %}
+          </span>
+        </span>
+      </div>
+      <button
+        class="text-crime-accent hover:text-crime-accent/80 text-sm font-semibold"
+        onclick="showOnMap({{crime.location.lat}}, {{crime.location.lng}})"
+      >
+        View on Map →
+      </button>
+    </div>
+  </div>
+</div>

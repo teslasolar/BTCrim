@@ -1,0 +1,41 @@
+[
+  {
+    "id": "CSV-1766735239031-0",
+    "type": "THEFT",
+    "date": "2025-12-25T14:30:00",
+    "location": {
+      "lat": 40.652,
+      "lng": -75.37
+    },
+    "address": "100 Block Main Street",
+    "description": "Vehicle break-in reported",
+    "status": "INVESTIGATING",
+    "severity": 3
+  },
+  {
+    "id": "CSV-1766735239031-1",
+    "type": "VANDALISM",
+    "date": "2025-12-24T22:15:00",
+    "location": {
+      "lat": 40.6485,
+      "lng": -75.3665
+    },
+    "address": "400 Block Park Avenue",
+    "description": "Graffiti on public property",
+    "status": "REPORTED",
+    "severity": 2
+  },
+  {
+    "id": "CSV-1766735239031-2",
+    "type": "BURGLARY",
+    "date": "2025-12-23T03:45:00",
+    "location": {
+      "lat": 40.654,
+      "lng": -75.372
+    },
+    "address": "700 Block Oak Street",
+    "description": "Residential break-in",
+    "status": "CLOSED",
+    "severity": 4
+  }
+]

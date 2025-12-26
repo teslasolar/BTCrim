@@ -1,0 +1,206 @@
+---
+layout: base.njk
+title: Crime Map
+---
+
+<div class="mb-8">
+  <h1 class="text-4xl font-bold mb-2">Bethlehem Township Crime Map</h1>
+  <p class="text-crime-muted text-lg">Real-time crime data visualization and analysis</p>
+</div>
+
+<!-- Quick Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+  <div class="stat-card">
+    <div class="stat-value">247</div>
+    <div class="stat-label">Total Incidents</div>
+    <div class="stat-trend-down mt-2">↓ 12% vs last month</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">89</div>
+    <div class="stat-label">This Month</div>
+    <div class="stat-trend-up mt-2">↑ 5% vs last month</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">5</div>
+    <div class="stat-label">Active Hotspots</div>
+    <div class="text-crime-warning text-sm mt-2">⚠️ Requires attention</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">72%</div>
+    <div class="stat-label">Clearance Rate</div>
+    <div class="stat-trend-up mt-2">↑ 3% vs last month</div>
+  </div>
+</div>
+
+<!-- Filters -->
+<div class="bg-crime-surface rounded-lg p-6 mb-8 border border-crime-primary/30">
+  <h2 class="text-xl font-bold mb-4">Filters</h2>
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="filter-group">
+      <label class="filter-label">Date Range</label>
+      <select class="filter-select" id="dateRange">
+        <option>Last 7 Days</option>
+        <option>Last 30 Days</option>
+        <option>Last 90 Days</option>
+        <option>Last Year</option>
+        <option>All Time</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Crime Type</label>
+      <select class="filter-select" id="crimeType">
+        <option value="">All Types</option>
+        <option value="theft">Theft</option>
+        <option value="burglary">Burglary</option>
+        <option value="assault">Assault</option>
+        <option value="vandalism">Vandalism</option>
+        <option value="drug">Drug Offense</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Severity</label>
+      <select class="filter-select" id="severity">
+        <option value="">All Levels</option>
+        <option value="5">Level 5 (Highest)</option>
+        <option value="4">Level 4</option>
+        <option value="3">Level 3</option>
+        <option value="2">Level 2</option>
+        <option value="1">Level 1</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label class="filter-label">Status</label>
+      <select class="filter-select" id="status">
+        <option value="">All Statuses</option>
+        <option value="reported">Reported</option>
+        <option value="investigating">Investigating</option>
+        <option value="closed">Closed</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- Map Container -->
+<div class="mb-8">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Interactive Map</h2>
+    <div class="flex space-x-2">
+      <button class="btn-secondary" id="toggleHeatmap">Toggle Heatmap</button>
+      <button class="btn-secondary" id="toggleClusters">Toggle Clusters</button>
+    </div>
+  </div>
+  <div id="crimeMap" class="map-container"></div>
+
+  <!-- Map Legend -->
+  <div class="mt-4 heat-legend">
+    <div class="text-sm font-semibold text-crime-text mb-2">Crime Intensity</div>
+    <div class="heat-gradient mb-2"></div>
+    <div class="flex justify-between text-xs text-crime-muted">
+      <span>Low</span>
+      <span>Medium</span>
+      <span>High</span>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Incidents -->
+<div>
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Recent Incidents</h2>
+    <a href="/all-incidents" class="text-crime-accent hover:text-crime-accent/80 font-semibold">
+      View All →
+    </a>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="recentIncidents">
+    <!-- Crime cards will be populated by JavaScript -->
+    <div class="crime-card">
+      <div class="crime-card-header">
+        <div>
+          <h3 class="text-lg font-bold">THEFT</h3>
+          <p class="text-sm text-crime-muted font-mono">2025-12-25</p>
+        </div>
+        <span class="crime-badge crime-theft">THEFT</span>
+      </div>
+      <div class="space-y-2">
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📍</span>
+          <span class="text-sm">Main Street, Bethlehem Township</span>
+        </div>
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📝</span>
+          <span class="text-sm">Vehicle break-in reported</span>
+        </div>
+        <div class="flex items-center justify-between pt-3 border-t border-crime-primary/20">
+          <div class="flex items-center space-x-3">
+            <span class="text-xs text-crime-muted">
+              Status: <span class="text-crime-text font-semibold">INVESTIGATING</span>
+            </span>
+            <span class="text-xs text-crime-muted">
+              Severity: <span class="text-crime-warning font-semibold">⚠️⚠️⚠️</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crime-card">
+      <div class="crime-card-header">
+        <div>
+          <h3 class="text-lg font-bold">VANDALISM</h3>
+          <p class="text-sm text-crime-muted font-mono">2025-12-24</p>
+        </div>
+        <span class="crime-badge crime-vandalism">VANDALISM</span>
+      </div>
+      <div class="space-y-2">
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📍</span>
+          <span class="text-sm">Park Avenue</span>
+        </div>
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📝</span>
+          <span class="text-sm">Graffiti on public property</span>
+        </div>
+        <div class="flex items-center justify-between pt-3 border-t border-crime-primary/20">
+          <div class="flex items-center space-x-3">
+            <span class="text-xs text-crime-muted">
+              Status: <span class="text-crime-text font-semibold">REPORTED</span>
+            </span>
+            <span class="text-xs text-crime-muted">
+              Severity: <span class="text-crime-warning font-semibold">⚠️⚠️</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="crime-card">
+      <div class="crime-card-header">
+        <div>
+          <h3 class="text-lg font-bold">BURGLARY</h3>
+          <p class="text-sm text-crime-muted font-mono">2025-12-23</p>
+        </div>
+        <span class="crime-badge crime-burglary">BURGLARY</span>
+      </div>
+      <div class="space-y-2">
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📍</span>
+          <span class="text-sm">Oak Street</span>
+        </div>
+        <div class="flex items-start">
+          <span class="text-crime-muted mr-2">📝</span>
+          <span class="text-sm">Residential break-in</span>
+        </div>
+        <div class="flex items-center justify-between pt-3 border-t border-crime-primary/20">
+          <div class="flex items-center space-x-3">
+            <span class="text-xs text-crime-muted">
+              Status: <span class="text-crime-text font-semibold">CLOSED</span>
+            </span>
+            <span class="text-xs text-crime-muted">
+              Severity: <span class="text-crime-warning font-semibold">⚠️⚠️⚠️⚠️</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
