@@ -1,0 +1,4 @@
+type,date,address,description,lat,lng,status,severity
+THEFT,2025-12-25T14:30:00,123 Main Street,Vehicle break-in reported,40.6520,-75.3700,INVESTIGATING,3
+VANDALISM,2025-12-24T22:15:00,456 Park Avenue,Graffiti on public property,40.6485,-75.3665,REPORTED,2
+BURGLARY,2025-12-23T03:45:00,789 Oak Street,Residential break-in,40.6540,-75.3720,CLOSED,4
